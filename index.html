@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P3-M18</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step5Challenge = document.getElementById('activity-4-step-5');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+          
+                
+                }
+            } else {
+                 if (activity2) activity2.style.display = 'block';
+        if (step5Challenge) {
+            const dialogue = step5Challenge.querySelector('.dialogue');
+            dialogue.innerHTML = dialogue.innerHTML.replace(
+                ' <span style="font-weight: bold;">Como tienes encendida la acción de 40 minutos de clase, aquí debes ocupar 10 minutos en vez de 15.</span>',
+                ''
+            );
+        }
+    }
+
+    document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+}
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P3-M18</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_mision')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar que estén disponibles los materiales necesarios.
+        </div>
+    </div>
+    <div id="revision_mision" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1:</strong> Proyectar Diapositiva 1 y verificar que están disponibles los materiales necesarios.</td>
+                <td style="padding: 10px; vertical-align: top;">No aplica</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('saludo_ritual')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida al grupo y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="saludo_ritual" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 2 con el logotipo de Gnius Club.</td>
+                <td style="padding: 10px; vertical-align: top;">"¡Hola, Genios! 🌟 Hoy es un día especial: ¡nuestra feria de proyectos! Cada equipo va a mostrar su videojuego y probar los juegos de sus compañeros. ¿Están listos para esta experiencia de aprendizaje y diversión? ¡Va a ser un gran día!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 3 con nuevas poses para medir el estado de ánimo.</td>
+                <td style="padding: 10px; vertical-align: top;">"Antes de comenzar, quiero saber cómo se sienten. Si están emocionados por la feria, levanten ambos brazos como si celebraran. Si sienten un poco de nervios, pongan una mano en el corazón. ¡Recuerden, estamos aquí para apoyarnos mutuamente!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 4 para guiar a los estudiantes en el ritual.</td>
+                <td style="padding: 10px; vertical-align: top;">"Juntamos nuestras manos y decimos: '¡Gracias por estar aquí, Genios! Hoy vamos a compartir nuestras creaciones y disfrutar de lo que todos han logrado. ¡Será un día fantástico de aprendizaje y amistad!'"</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0.5 minutos):</strong> Proyectar Diapositiva 5 "Objetivos de la Feria" y leer en voz alta los objetivos.</td>
+                <td style="padding: 10px; vertical-align: top;">"Hoy tenemos dos objetivos importantes: 1. Presentar nuestro videojuego de manera clara y divertida para que todos puedan disfrutarlo. 2. Probar y dar retroalimentación sobre los juegos de nuestros compañeros. ¡Aprenderemos unos de otros!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('brain_vitamin')">
+        <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 2.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Activar nuestras mentes con ejercicios rápidos para prepararnos para la feria.
+        </div>
+    </div>
+    <div id="brain_vitamin" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 6 "Gimnasia Cerebral".</td>
+                <td style="padding: 10px; vertical-align: top;">"¡Genios! Antes de comenzar la feria, activemos nuestras mentes. Vamos a hacer un ejercicio rápido que nos pondrá en modo explorador y listo para descubrir las ideas de todos. ¿Listos? ¡Empecemos!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 7 con el ejercicio de estiramiento y respiración profunda.</td>
+                <td style="padding: 10px; vertical-align: top;">"Pongan sus manos sobre sus rodillas y, lentamente, giren la cabeza y los hombros. ¡Esto nos ayudará a relajarnos y enfocarnos para la feria! Ahora, una respiración profunda… y estamos listos para empezar."</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar Diapositiva 8 con un ejercicio mental de "reflejos".</td>
+                <td style="padding: 10px; vertical-align: top;">"Ahora, un último ejercicio mental: si digo 'Presentador', todos levantan la mano derecha. Si digo 'Explorador', levantan la izquierda. Vamos a hacer esto rápido para activar nuestra mente y prepararnos para cambiar de roles durante la feria."</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('team_gnius')">
+        <div class="title">🤝 Actividad 3: Team Gnius ⏰ Tiempo: 8 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Organización de equipos y preparación para la feria de proyectos.
+        </div>
+    </div>
+    <div id="team_gnius" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 9: Introducción de "Team Gnius" y explicación de la tarea de juntarse en equipos.</td>
+                <td style="padding: 10px; vertical-align: top;">"¡Atención, Genios! Ahora comienza nuestra fase de Team Gnius. Cada uno debe reunirse con su equipo para empezar a prepararse para la feria de proyectos. ¡Vamos a reunirnos!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 10: Temporizador de 30 segundos para que los estudiantes se agrupen en sus equipos.</td>
+                <td style="padding: 10px; vertical-align: top;">"Tienen 30 segundos para encontrar a su equipo y estar todos juntos en una sola mesa. ¡Rápido, que el tiempo comienza ya!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 11: Instrucción sobre los materiales que cada equipo necesita recoger.</td>
+                <td style="padding: 10px; vertical-align: top;">"Ahora que están en equipo, es momento de recoger sus materiales. Necesitarán: 1. Su dispositivo con el videojuego abierto. 2. Magic Tablets para tomar notas. 3. Cargadores si es necesario. ¡Vamos, que necesitamos todo listo para la feria!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (3 minutos):</strong> Proyectar Diapositiva 12: Temporizador de 3 minutos para recoger los materiales.</td>
+                <td style="padding: 10px; vertical-align: top;">"Tienen 3 minutos para recoger todo lo que necesitan. Asegúrense de que todo esté en orden para la presentación. ¡Recuerden, necesitamos que todo esté listo para la feria!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (0.5 minutos):</strong> Proyectar Diapositiva 13: Instrucción para definir roles iniciales.</td>
+                <td style="padding: 10px; vertical-align: top;">"Ahora, decidan en su equipo quién empezará como explorador y quién como presentador. El presentador se quedará en su estación y el explorador irá a conocer los juegos de otros equipos. ¡Acuerden quién hará cada rol primero!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (3 minutos):</strong> Proyectar Diapositiva 14: Temporizador de 3 minutos para acordar los roles.</td>
+                <td style="padding: 10px; vertical-align: top;">"Tienen 3 minutos para decidir los roles. Asegúrense de que todos estén de acuerdo y entiendan su función. ¡Esta feria será más divertida si todos participan de ambos roles!"</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (0.5 minutos):</strong> No requiere diapositiva.</td>
+                <td style="padding: 10px; vertical-align: top;">"Recuerden que durante el Challenge, rotarán los roles, así que cada uno tendrá la oportunidad de ser tanto presentador como explorador. ¡Prepárense para aprender y divertirse en ambos roles!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('challenge')">
+        <div class="title">🚀 Actividad 4: Challenge ⏰ Tiempo: 33 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Presentación y exploración de los videojuegos creados por los equipos.
+        </div>
+    </div>
+    <div id="challenge" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 15: Introducción al Challenge.</td>
+                <td style="padding: 10px; vertical-align: top;">"¡Es momento de iniciar nuestro Challenge de feria de proyectos! Cada equipo mostrará su videojuego y tendrá la oportunidad de probar los de sus compañeros. ¡Vamos a divertirnos y aprender juntos!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 16: Instrucciones sobre la rotación de roles.</td>
+                <td style="padding: 10px; vertical-align: top;">"Recuerden: el presentador se queda en su estación para mostrar y explicar su videojuego, mientras que el explorador irá a otras estaciones para jugar y dar retroalimentación. ¡Prepárense para turnarse y probar diferentes roles!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (15 minutos):</strong> Proyectar Diapositiva 17: Temporizador de 15 minutos para la primera ronda.</td>
+                <td style="padding: 10px; vertical-align: top;">"¡Es hora de empezar! Exploradores, tienen 15 minutos en esta estación para jugar y hacer preguntas al presentador. Presentadores, expliquen su juego y guíen a su compañero. ¡Buena suerte y diviértanse!"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0.5 minutos):</strong> Proyectar Diapositiva 18: Instrucción para el cambio de roles.</td>
+                <td style="padding: 10px; vertical-align: top;">"¡Cambio de roles! Ahora el explorador se convierte en presentador, y el presentador se convierte en explorador. Tienen 30 segundos para prepararse antes de la siguiente ronda."</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;" id="activity-4-step-5">
+    <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (15 minutos):</strong> Proyectar Diapositiva 19: Temporizador de 15 minutos para la segunda ronda.</td>
+    <td class="dialogue" style="padding: 10px; vertical-align: top;">"¡Es el turno de la segunda ronda! Exploradores, visiten una nueva estación, prueben el juego y hagan preguntas. Presentadores, expliquen y guíen a su compañero. ¡Aprovechen esta oportunidad para compartir sus ideas!"</td>
+</tr>
+
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (1 minuto):</strong> Proyectar Diapositiva 20: Preguntas de reflexión sobre el Challenge.</td>
+                <td style="padding: 10px; vertical-align: top;">"¡Gran trabajo, Genios! Ahora tomemos un momento para reflexionar: ¿Cómo se sintieron presentando su videojuego? ¿Qué aprendieron de probar los juegos de sus compañeros? ¿Qué harían diferente la próxima vez?"</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (0.5 minutos):</strong> No requiere diapositiva.</td>
+                <td style="padding: 10px; vertical-align: top;">"El Challenge ha terminado. ¡Felicidades a todos por su participación y por compartir sus increíbles proyectos! Nos preparamos para la siguiente fase."</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('honor_dojo')">
+        <div class="title">🏅 Actividad 5: Honor de Dojo ⏰ Tiempo: 2.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="honor_dojo" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 21: Revisión de objetivos alcanzados.</td>
+                <td style="padding: 10px; vertical-align: top;">"¡Genios! Hoy tuvimos una increíble feria de proyectos y logramos presentar y explorar nuestros videojuegos. Ahora quiero que reflexionemos juntos: ¿Cumplimos los objetivos que nos propusimos al inicio?"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> No requiere diapositiva.</td>
+                <td style="padding: 10px; vertical-align: top;">"Hoy no solo creamos y presentamos videojuegos, ¡trabajamos como un equipo de genios! Su esfuerzo, creatividad y colaboración hicieron de esta feria un gran éxito. ¡Felicidades a todos por su gran trabajo en equipo!"</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1.5 minutos):</strong> Proyectar Diapositiva 23: Animación sobre la organización del espacio de trabajo.</td>
+                <td style="padding: 10px; vertical-align: top;">"Como parte del Honor de Dojo, vamos a dejar nuestro espacio de trabajo limpio y organizado, tal como lo encontramos. Un verdadero genio respeta su lugar de trabajo y siempre lo deja impecable. ¡Manos a la obra!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+    </div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
